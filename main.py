@@ -41,6 +41,8 @@ condition = st.sidebar.multiselect(
 # filter data
 data = dataset.query("Purchase_Year == @year & Category == @category & Location == @location & Condition == @condition ")
 
+st.title("PT.Rumah Media Interaksi")
+
 # KPI
 sum_item = int(data['Quantity'].sum())
 sum_asset = int(data['Value'].sum())
