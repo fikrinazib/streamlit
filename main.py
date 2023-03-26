@@ -1,15 +1,13 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import datetime
 import plotly.express as px
 
 
-
+dataset = pd.read_csv("inventories_update.csv")
 # Sidebar
 
-dataset = pd.read_csv("inventories_update.csv")
-
+# Date Control
 st.sidebar.header("Date Control")
 
 
@@ -19,6 +17,7 @@ year = st.sidebar.multiselect(
     default=dataset['Purchase_Year'].unique()
 )
 
+# data control
 st.sidebar.header("Data Control")
 
 category = st.sidebar.multiselect(
@@ -39,9 +38,10 @@ condition = st.sidebar.multiselect(
     default=dataset['Condition'].unique()
 )
 
-
+# filter data
 data = dataset.query("Purchase_Year == @year & Category == @category & Location == @location & Condition == @condition ")
 
+# KPI
 sum_item = int(data['Quantity'].sum())
 sum_asset = int(data['Value'].sum())
 max = int(data['Price'].max())
@@ -75,8 +75,6 @@ with col4:
 df = pd.DataFrame(data)
 
 results_type = st.selectbox('Value', ['Category', 'Location', 'Condition'] )
-
-# -- GROUP DATAFRAME
 output_columns = ['Value']
 df_grouped = df.groupby(by=[results_type], as_index=False)[output_columns].sum()
 
