@@ -3,8 +3,7 @@ import pandas as pd
 import numpy as np
 import datetime
 import plotly.express as px
-import plost
-import matplotlib.pyplot as plt
+
 
 
 # Sidebar
@@ -99,47 +98,6 @@ fig = px.line(df_grouped, x=results_type, y='Value', title=f'<b>Value by {result
 
 st.plotly_chart(fig)
 
-# df = pd.DataFrame(data)
-
-
-# with bar2:
-#     results_type = st.selectbox('Quantity', ['Category', 'Location'])
-    
-#     fig = px.pie(df, values=results_type, names='Quantity',
-#                  title="Pie Chart Quantity terhadap Quantity",
-#                  height=300, width=200)
-#     st.plotly_chart(fig, use_container_width=True)
-
-# #Bar Chart Location
-# df = pd.DataFrame(data)
-
-# with bar2:
-#     results_type = st.selectbox('Value', ['Location'])
-
-# # -- GROUP DATAFRAME
-# output_columns = ['Value']
-# df_grouped = df.groupby(by=[results_type], as_index=False)[output_columns].sum()
-
-
-# fig = px.bar(df_grouped, x=results_type, y='Value', color='Value', 
-#              color_continuous_scale=['red', 'yellow', 'green'],
-#              template='plotly_white', title=f'<b>Value by {results_type}</b>')
-
-# st.plotly_chart(fig)
-
-# with bar3:
-#     results_type = st.selectbox('Value', ['Condition'])
-
-# # -- GROUP DATAFRAME
-# output_columns = ['Value']
-# df_grouped = df.groupby(by=[results_type], as_index=False)[output_columns].sum()
-
-
-# fig = px.bar(df_grouped, x=results_type, y='Value', color='Value', 
-#              color_continuous_scale=['red', 'yellow', 'green'],
-#              template='plotly_white', title=f'<b>Value by {results_type}</b>')
-
-# st.plotly_chart(fig)
 
 #Pie Chart Category
 
@@ -167,13 +125,3 @@ with pie2:
                  height=300, width=200)
     st.plotly_chart(fig, use_container_width=True)
 
-
-# df = pd.DataFrame(data)
-# results_type = st.selectbox('Value', ['Purchase_Year'] )
-# output_columns = ['Value']
-# df_grouped = df.groupby(by=[results_type], as_index=False)[output_columns].sum()
-
-
-# fig = px.line(df_grouped, x=results_type, y='Value', title=f'<b>Value by {results_type}</b>')
-
-# st.(fig)
