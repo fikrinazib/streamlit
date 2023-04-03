@@ -47,12 +47,12 @@ st.title("PT.Rumah Media Interaksi")
 sum_item = int(data['Quantity'].sum())
 sum_asset = int(data['Value'].sum())
 max = int(data['Price'].max())
-min = int(data['Price'].min())
+average = int(data['Price'].mean())
 
 total_items = format (sum_item, ",")
 total_asset =format (sum_asset, ",")
 max_asset =format (max, ",")
-min_asset =format (min, ",")
+average_asset =format (average, ",")
 
 col1, col2, col3, col4 = st.columns(4)
 
@@ -70,8 +70,8 @@ with col3:
 
 
 with col4:
-    st.subheader("Lowest Asset")
-    st.subheader(min_asset) 
+    st.subheader("Average Asset")
+    st.subheader(average_asset) 
 
 #Bar Chart
 df = pd.DataFrame(data)
