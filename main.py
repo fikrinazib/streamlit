@@ -58,20 +58,20 @@ col1, col2, col3, col4 = st.columns(4)
 
 with col1:
     st.subheader("Item")
-    st.subheader(total_items) 
+    st.subheader("Rp."+total_items) 
 with col2:
     st.subheader("Total Asset ")
-    st.subheader(total_asset)
+    st.subheader("Rp."+total_asset)
 
 
 with col3:
     st.subheader("Highest Asset")
-    st.subheader(max_asset) 
+    st.subheader("Rp."+max_asset) 
 
 
 with col4:
     st.subheader("Average Asset")
-    st.subheader(average_asset) 
+    st.subheader("Rp."+average_asset) 
 
 #Bar Chart
 df = pd.DataFrame(data)
