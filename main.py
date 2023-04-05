@@ -58,7 +58,7 @@ col1, col2, col3, col4 = st.columns(4)
 
 with col1:
     st.subheader("Item")
-    st.subheader("Rp."+total_items) 
+    st.subheader(total_items) 
 with col2:
     st.subheader("Total Asset ")
     st.subheader("Rp."+total_asset)
